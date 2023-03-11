@@ -1,0 +1,15 @@
+name: demo
+channels:
+  - defaults
+dependencies:
+  - matplotlib
+  - pip
+  - pip:
+      - gunicorn[gevent]
+      - flask
+      - celery
+      - flask-restful
+      - flask-sqlalchemy
+      - flask-migrate
+      - celery
+prefix: C:\ProgramData\Anaconda3\envs\demo

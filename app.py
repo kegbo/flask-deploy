@@ -1,4 +1,9 @@
 from flask import Flask
+import logging
+import api
+import config
+import models
+import os
 
 logging.basicConfig(level=logging.DEBUG,
                    format='[%(asctime)s]: {} %(levelname)s %(message)s'.format(os.getpid()),
@@ -14,7 +19,7 @@ def create_app():
    app.config.from_object('config')
    api.init_app(app)
    # initialize SQLAlchemy
-   db.init_app(app)
+   models.db.init_app(app)
 
    # define hello world page
 
@@ -26,4 +31,4 @@ def create_app():
 
 if __name__ == "__main__":
    app = create_app()
-   app.run(host='0.0.0.0', debug=True)</td>
+   app.run(host='0.0.0.0', debug=True)
